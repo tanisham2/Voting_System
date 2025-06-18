@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blockchain Voting System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Vote for Your Candidate</h1>
+    
+    <form id="voteForm">
+      <label for="voterId">Voter ID:</label>
+      <input type="text" id="voterId" name="voterId" required>
+
+      <label for="candidate">Choose Candidate:</label>
+      <select id="candidate" name="candidate" required>
+        <option value="">--Select--</option>
+        <option value="Narendra Mehta">Narendra Mehta</option>
+        <option value="Rahul Verma">Rahul Verma</option>
+        <option value="Arvind Kapoor">Arvind Kapoor</option>
+        <option value="Mamta Rane">Mamta Rane</option>
+      </select>
+
+      <button type="submit">Submit Vote</button>
+    </form>
+
+    <div id="message"></div>
+    <button id="endVotingBtn">End Voting</button>
+
+    <div class="result-section" id="resultsSection">
+      <ul id="resultsList">
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
