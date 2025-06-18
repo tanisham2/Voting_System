@@ -35,7 +35,7 @@ voting-system/
 ## 🚀 How to Run the Project Locally
 
 1. **Clone the repo**
-   git clone https://github.com/yourusername/blockchain-voting-system.git
+   git clone https://github.com/tanisham2/voting-system.git
    cd blockchain-voting-system
 
 2. **Install dependencies**
@@ -56,8 +56,8 @@ Admin can end the election to stop voting
 Results are shown after the election ends
 
 ## 📚 Future Improvements
-Add user authentication (with passwords or OTPs)
-Use a real database (like SQLite or MongoDB)
-Deploy to a cloud platform (like Heroku or Render)
-Implement smart contracts using Ethereum
-Add encryption for vote anonymity
+- Add user authentication (with passwords or OTPs)
+- Use a real database (like SQLite or MongoDB)
+- Deploy to a cloud platform (like Heroku or Render)
+- Implement smart contracts using Ethereum
+- Add encryption for vote anonymity
