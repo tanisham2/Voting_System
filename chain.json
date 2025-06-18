@@ -1,0 +1,21 @@
+[
+  {
+    "index": 0,
+    "transactions": [],
+    "timestamp": 1749815477.8425305,
+    "previous_hash": "0",
+    "hash": "03784349c270f6da5c03f133eca929f4bd34d09778e457057e3e8d6d02d27b09"
+  },
+  {
+    "index": 1,
+    "transactions": [
+      {
+        "voter_id": "VOTER001",
+        "candidate": "Narendra Mehta"
+      }
+    ],
+    "timestamp": 1749816000.123456,
+    "previous_hash": "03784349c270f6da5c03f133eca929f4bd34d09778e457057e3e8d6d02d27b09",
+    "hash": "8bc3faaa6bd846f4231cfb26a6f14c7c5fefb2f30cdce728e3a8410f3e512aa3"
+  }
+]
