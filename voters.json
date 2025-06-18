@@ -1,0 +1,20 @@
+{
+  "voters": [
+    {
+      "voter_id": "VOTER001",
+      "has_voted": false
+    },
+    {
+      "voter_id": "VOTER002",
+      "has_voted": false
+    },
+    {
+      "voter_id": "VOTER003",
+      "has_voted": false
+    },
+    {
+      "voter_id": "VOTER004",
+      "has_voted": false
+    }
+  ]
+}
