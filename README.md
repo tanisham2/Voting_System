@@ -11,42 +11,77 @@ A secure and transparent voting application built using **Python**, **Flask**, a
 - 📊 **Real-time Vote Count** (visible after election ends)
 - 🔑 **Admin Controls** – Start/End election, view results
 
+
 ## 🛠️ Tech Stack
 
-| Layer        | Technologies             |
-|--------------|---------------------------|
-| Frontend     | HTML, CSS, JavaScript     |
-| Backend      | Python, Flask             |
-| Blockchain   | Custom Python Blockchain  |
-| Database     | JSON File-based Storage   |
+| Layer      | Technologies                        |
+|------------|--------------------------------------|
+| Frontend   | React (Vite), Axios                  |
+| Backend    | Python, Flask, Flask-CORS            |
+| Blockchain | Custom Python implementation         |
+| Storage    | JSON file-based (chain.json, voters.json) |
 
 ## 📂 Project Structure
-
-voting-system/
+blockchain-voting-system/
 │
-├── static/ # CSS & JS files
-├── templates/ # HTML templates (Jinja2)
-├── app.py # Main Flask application
-├── blockchain.py # Blockchain logic
-├── voters.json # Registered voters
-├── votes.json # Cast votes
-└── README.md # Project documentation
+├── backend/
+│   ├── blockchain.py      # Block + Blockchain classes, chain validation
+│   ├── voting.py          # Flask REST API
+│   ├── voters.json        # Pre-registered voter IDs
+│   └── chain.json         # Persisted blockchain (auto-generated)
+│
+├── frontend/
+│   └── src/
+│       ├── App.jsx         # Main React component
+│       ├── main.jsx        # Entry point
+│       └── index.css       # Global styles
+│
+└── README.md
 
-## 🚀 How to Run the Project Locally
+## 🚀 How to Run Locally
 
-1. **Clone the repo**
-   git clone https://github.com/tanisham2/voting-system.git
-   cd blockchain-voting-system
+### Backend
 
-2. **Install dependencies**
-Make sure you have Python 3 installed.
-pip install flask
+```bash
+cd backend
+pip install flask flask-cors
+python voting.py
+```
 
-3. **Start the Flask server**
-python app.py
+Flask runs at `http://127.0.0.1:5000`
 
-4. **Open your browser**
-http://127.0.0.1:5000
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+React runs at `http://localhost:5173`
+
+## 🔗 API Endpoints
+
+| Method | Endpoint         | Description                  |
+|--------|------------------|------------------------------|
+| POST   | `/vote`          | Submit a vote                |
+| GET    | `/results`       | Get results (after voting ends) |
+| GET    | `/voting_status` | Check if voting is open      |
+| POST   | `/end_voting`    | Admin: end the election      |
+| GET    | `/chain`         | View the full blockchain     |
+
+## 🧠 How the Blockchain Works
+
+Each vote is wrapped in a transaction and mined into a new Block:
+Block {
+index: 1,
+transactions: [{ voter_id, candidate }],
+timestamp: ...,
+previous_hash: "03784...",
+hash: SHA-256(index + transactions + timestamp + previous_hash)
+}
+
+Changing any vote in any block invalidates that block's hash, which breaks the link to every subsequent block — making tampering immediately detectable.
 
 ## 📌 Usage
 Register new voters using their unique ID
